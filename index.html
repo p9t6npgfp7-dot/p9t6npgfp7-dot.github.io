@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jesse Liao Release Tool</title>
+<style>
+  :root { --ink:#1d2433; --muted:#5b6475; --line:#d9dee8; --bg:#fbfbf8; --accent:#2f4b8f; --todo:#fff1c2; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 system-ui, "Segoe UI", "Noto Sans TC", sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:40px 16px 64px; }
+  h1 { font-size:28px; margin:0 0 4px; }
+  h2 { font-size:20px; margin:40px 0 8px; padding-top:16px; border-top:1px solid var(--line); }
+  p, li { color:var(--ink); } .muted { color:var(--muted); }
+  nav a { color:var(--accent); margin-right:16px; }
+  a { color:var(--accent); }
+  .todo { background:var(--todo); padding:0 4px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Jesse Liao Release Tool</h1>
+  <p class="muted">A private publishing tool for the musician Jesse Liao. Uses YouTube API Services and the Meta Graph API.</p>
+  <nav><a href="#about">About</a><a href="#privacy">Privacy Policy</a><a href="data-deletion.html">Data Deletion</a><a href="#terms">Terms of Service</a></nav>
+
+  <h2 id="about">About</h2>
+  <p>Jesse Liao is an independent musician. This tool runs only on Jesse Liao's own computer and is used to publish Jesse Liao's original
+     songs to the YouTube channel <a href="https://www.youtube.com/channel/UCttU-2SBAfmo5hDnNiKQLIA">Jesse Liao</a> and, when the owner
+     connects them, to Jesse Liao's Facebook Page and Instagram professional account. For each release it uploads the finished video and sets its
+     title, description, thumbnail or cover, visibility and publish time. Nothing is uploaded until Jesse Liao has reviewed and approved that release.
+     The tool is not offered to anyone else.</p>
+  <p class="muted">Jesse Liao 是獨立音樂創作者。本工具只在 Jesse Liao 自己的電腦上執行，用來把 Jesse Liao 的原創歌曲發布到自己的 YouTube 頻道；Facebook 粉專與 Instagram 在本人連接後才會使用。每次發布都要本人審閱並核准後才上傳，不對外提供。</p>
+
+  <h2 id="privacy">Privacy Policy</h2>
+  <p>Last updated: November 25, 2026.</p>
+  <ul>
+    <li><strong>YouTube API Services.</strong> This tool uses YouTube API Services. By using it you agree to the
+      <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>. Google's handling of data is described in the
+      <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. The tool's use of information received from Google APIs
+      adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+      including the Limited Use requirements.</li>
+    <li><strong>What is accessed: Google.</strong> With the owner's consent (Google OAuth, scope <code>youtube.force-ssl</code>), the tool reads the
+      authorized channel's ID and title, uploads videos the owner approved, sets their title, description, tags, category, language, thumbnail,
+      visibility, scheduled publish time, made-for-kids setting and altered or synthetic content disclosure, and reads back their processing and
+      privacy status. It does not delete videos.</li>
+    <li><strong>What is accessed: Meta (only after the owner connects Facebook or Instagram).</strong> With the owner's consent (Facebook Login,
+      permissions <code>pages_show_list</code>, <code>pages_read_engagement</code>, <code>pages_manage_posts</code>, <code>instagram_basic</code>,
+      <code>instagram_content_publish</code>), the tool reads the ID and name of the owner's Page and of the Instagram professional account linked to it,
+      uploads Reels the owner approved with their caption, cover and publish time, and reads back their status and links. If the owner cancels a
+      scheduled Facebook Reel before it goes live, the tool deletes that unpublished Reel. Meta's handling of data is described in the
+      <a href="https://www.facebook.com/privacy/policy/">Meta Privacy Policy</a>.</li>
+    <li><strong>What is stored, and where.</strong> The tool keeps its data on the owner's computer, in its local database and log files:
+      <ul>
+        <li>Encrypted with Windows DPAPI, so that only the owner's Windows user account on that computer can decrypt them: the platforms' app
+          credentials (client IDs and secrets), access and refresh tokens, the email address of the Google account used to sign in, sign-in requests in progress,
+          and upload progress records.</li>
+        <li>Stored without that extra encryption, protected by the computer's own account security: the connected accounts' names, IDs, granted
+          permissions and connection status; release plans (titles, descriptions, tags, visibility, AI-content disclosure and scheduled times);
+          approvals and review history; the location and SHA-256 fingerprint of each media file, and an unchanged copy of each approved video and
+          cover kept for uploading; the IDs, links and status of uploaded videos
+          and Reels; and activity logs.</li>
+      </ul></li>
+    <li><strong>Where data goes.</strong> To publish and to check releases, the tool connects to the platforms' own servers: Google for YouTube, and Meta
+      for Facebook and Instagram. Its local interface also loads a typeface from Google Fonts, which, like any web request, receives the computer's
+      IP address. It contains no analytics, advertising or third-party tracking code. It does not sell data, and it sends account and release data
+      only to the platform it is publishing to.</li>
+    <li><strong>Revoking access.</strong> Access can be revoked at any time at <a href="https://myaccount.google.com/permissions">Google Account permissions</a>
+      and in <a href="https://www.facebook.com/settings?tab=business_tools">Facebook settings &rarr; Business integrations</a>. Revoked tokens stop working;
+      the tool then marks that connection as needing re-authorization and does not publish to it until it is connected again.
+      The tool's own "disconnect" setting only stops it from using a connection; it does not revoke access at the platform and does not delete the stored token.</li>
+    <li><strong>Deleting data.</strong> Stored tokens and records are deleted by deleting the tool's data folder on the owner's computer. Videos and Reels
+      already published stay on the platforms until they are deleted there. For Facebook and Instagram, see <a href="data-deletion.html">Data Deletion</a>.</li>
+    <li><strong>This website.</strong> This page is hosted on GitHub Pages. GitHub may record visitors' IP addresses as described in the
+      <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</li>
+    <li><strong>Contact.</strong> Privacy questions and deletion requests: <a href="mailto:jesseliao.music@gmail.com">jesseliao.music@gmail.com</a>.</li>
+  </ul>
+
+  <h2 id="terms">Terms of Service</h2>
+  <ul>
+    <li>This tool is for the private use of its owner, Jesse Liao, to publish Jesse Liao's own original works. It is not offered to the public.</li>
+    <li>Use of the tool is also subject to the <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>
+      and the <a href="https://www.facebook.com/terms">Meta Terms of Service</a>.</li>
+    <li>The owner is responsible for the content uploaded and for complying with each platform's community guidelines and policies,
+      including disclosure of altered or synthetic content.</li>
+    <li>The tool is provided as is, without warranty.</li>
+  </ul>
+</main>
+</body>
+</html>
