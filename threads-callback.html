@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Returning · Jesse Liao Release Tool</title>
+<style>
+  :root { --ink:#1d2433; --muted:#5b6475; --bg:#fbfbf8; --accent:#2f4b8f; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 system-ui, "Segoe UI", "Noto Sans TC", sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:40px 16px 64px; }
+  .muted { color:var(--muted); } a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Returning to the release tool…</h1>
+  <p class="muted">Threads sign-in for Jesse Liao Release Tool. This page keeps nothing: it only hands the sign-in result back to the tool
+     running on the owner's own computer. <a href="index.html">Home</a> · <a href="index.html#privacy">Privacy Policy</a></p>
+  <p id="manual" hidden><a id="back" href="#">Continue to the release tool</a></p>
+</main>
+<script>
+  (function () {
+    var target = "http://127.0.0.1:8769/api/social/oauth/threads/callback" + location.search;
+    var back = document.getElementById("back");
+    back.href = target;
+    document.getElementById("manual").hidden = false;
+    if (/[?&](code|error)=/.test(location.search)) location.replace(target);
+  })();
+</script>
+</body>
+</html>
